@@ -18,4 +18,3 @@ public class ServiceCalculator {
         return num1 + num2 ;
     }
     }
-
