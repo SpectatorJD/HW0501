@@ -19,7 +19,23 @@ public class ControllerHello {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public int getAddition (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+    public String getAddition (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
         return serviceCalculator.getAddition(num1, num2);
+    }
+    @GetMapping(path = "/calculator/minus")
+    public String getSubtraction (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+        return serviceCalculator.getSubtraction(num1, num2);
+    }
+    @GetMapping(path = "/calculator/multiply")
+    public String getMultiplication (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+        return serviceCalculator.getMultiplication(num1, num2);
+    }
+    @GetMapping(path = "/calculator/divide")
+    public String getDivision (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+        return serviceCalculator.getDivision(num1, num2);
     }
 }
