@@ -19,7 +19,42 @@ public class ControllerHello {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public int getAddition (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
-        return serviceCalculator.getAddition(num1, num2);
+    public String getAddition (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+
+        serviceCalculator.getAddition(num1, num2);
+        String result = num1 + " + " + num2 + " = " + serviceCalculator.getAddition(num1, num2);
+        System.out.println(result);
+        return result;
+    }
+
+
+    @GetMapping(path = "/calculator/minus")
+    public String getSubtraction (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+        serviceCalculator.getSubtraction(num1, num2);
+        String result = num1 + " - " + num2 + " = " + serviceCalculator.getSubtraction(num1, num2);
+        System.out.println(result);
+        return result;
+    }
+
+
+    @GetMapping(path = "/calculator/multiply")
+    public String getMultiplication (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+      serviceCalculator.getMultiplication(num1, num2);
+        String result = num1 + " * " + num2 + " = " + serviceCalculator.getMultiplication(num1, num2);
+        System.out.println(result);
+        return result;
+    }
+    @GetMapping(path = "/calculator/divide")
+    public String getDivision (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
+
+        serviceCalculator.getDivision(num1, num2);
+        if (num2 == 0) {
+            return "Деление 0 запрещено";
+        }
+        String result = num1 + " / " + num2 + " = " + serviceCalculator.getDivision(num1, num2);
+        System.out.println(result);
+        return result;
     }
 }
