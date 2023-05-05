@@ -23,7 +23,7 @@ public class ControllerHello {
 
 
         serviceCalculator.getAddition(num1, num2);
-        String result = num1 + " + " + num2 + " = " + (num1 + num2);
+        String result = num1 + " + " + num2 + " = " + serviceCalculator.getAddition(num1, num2);
         System.out.println(result);
         return result;
     }
@@ -32,7 +32,7 @@ public class ControllerHello {
     @GetMapping(path = "/calculator/minus")
     public String getSubtraction (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
         serviceCalculator.getSubtraction(num1, num2);
-        String result = num1 + " - " + num2 + " = " + (num1 - num2);
+        String result = num1 + " - " + num2 + " = " + serviceCalculator.getSubtraction(num1, num2);
         System.out.println(result);
         return result;
     }
@@ -42,7 +42,7 @@ public class ControllerHello {
     public String getMultiplication (@RequestParam("num1") int num1, @RequestParam("num2") int num2){
 
       serviceCalculator.getMultiplication(num1, num2);
-        String result = num1 + " * " + num2 + " = " + (num1 * num2);
+        String result = num1 + " * " + num2 + " = " + serviceCalculator.getMultiplication(num1, num2);
         System.out.println(result);
         return result;
     }
@@ -53,7 +53,7 @@ public class ControllerHello {
         if (num2 == 0) {
             return "Деление 0 запрещено";
         }
-        String result = num1 + " / " + num2 + " = " + (num1 / num2);
+        String result = num1 + " / " + num2 + " = " + serviceCalculator.getDivision(num1, num2);
         System.out.println(result);
         return result;
     }
