@@ -14,32 +14,26 @@ public class ServiceCalculator {
     }
 
 
-    public String getAddition(int num1, int num2) {
-        String result = num1 + " + " + num2 + " = " + (num1 + num2);
-        System.out.println(result);
+    public int getAddition(int num1, int num2) {
+        int result = num1 + num2;
         return result;
     }
 
-    public String getSubtraction(int num1, int num2) {
-        String result = num1 + " - " + num2 + " = " + (num1 - num2);
-        System.out.println(result);
+    public int getSubtraction(int num1, int num2) {
+        int result = num1 - num2;
         return result;
     }
 
-    public String getMultiplication(int num1, int num2) {
-        String result = num1 + " * " + num2 + " = " + (num1 * num2);
-        System.out.println(result);
+    public int getMultiplication(int num1, int num2) {
+        int result = num1 * num2;
         return result;
     }
 
-    public String getDivision(int num1, int num2) {
-        if (num2 == 0) {
-            return "Деление 0 запрещено";
-        }
-            String result = num1 + " / " + num2 + " = " + (num1 / num2);
-            System.out.println(result);
+    public int getDivision(int num1, int num2) {
+        int result = num1 / num2;
             return result;
         }
+
     }
 
 
